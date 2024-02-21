@@ -1,4 +1,4 @@
-# Projet de Gestion AWS S3 en Node.js
+# Projet de Gestion AWS S3 (Cli Node.js)
 
 Ce script Node.js offre une interface en ligne de commande (CLI) pour interagir avec Amazon S3. Il permet de créer des buckets, d'obtenir des URLs signées pour les objets, et d'uploader des objets dans un bucket spécifique. Le script utilise le SDK AWS pour JavaScript.
 
