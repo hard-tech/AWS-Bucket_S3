@@ -5,7 +5,8 @@ import './css/App.css';
 
 function App() {
   const [file, setFile] = useState(null);
-  const bucketName = "together-document";
+  const [uploadMessage, setUploadMessage] = useState("")
+  const bucketName = process.env.REACT_APP_AWS_BUCKET_NAME;
 
   const handleChange = (newFile) => {
     setFile(newFile);
@@ -17,15 +18,15 @@ function App() {
       const fileBody = file; // Assurez-vous que ceci est le contenu attendu par AWS S3
 
       uploadObject(bucketName, fileBody, file.name)
-        .then((data) => console.log(`Objet ${file.name} uploadé avec succès.`, data))
-        .catch((err) => console.error(`Erreur lors de l'upload de l'objet :`, err));
+        .then((data) => setUploadMessage(`Objet ${file.name} uploadé avec succès.` ))
+        .catch((err) => (setUploadMessage(`Erreur lors de l'upload de l'objet`), console.log(`Erreur lors de l'upload de l'objet ${err.message}`)));
     }
   }, [file]); // Dépendance à `file` pour déclencher l'effet
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Drop file here</h1>
+        <h2 className="App-title"> {file ? uploadMessage : "Drop file here"} </h2>
         <FileUploader handleChange={handleChange} name="file" />
       </header>
     </div>
