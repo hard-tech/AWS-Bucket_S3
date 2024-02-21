@@ -1,5 +1,4 @@
 // imports
-require('dotenv').config();
 
 /**
  * Charger le SDK AWS pour JavaScript
@@ -55,4 +54,4 @@ function getUrl(bucketName, keyFile) {
     });
 }
 
-exports.getUrl = getUrl;
+export default getUrl;
