@@ -27,10 +27,8 @@ function createBucket(bucketName) {
 
         s3.createBucket(params, function(err, data) {
             if (err) {
-                console.log("Erreur :", err);
                 reject(err);
             } else {
-                console.log("Bucket créé :", data);
                 resolve(data);
             }
         });
