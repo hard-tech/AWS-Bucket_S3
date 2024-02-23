@@ -41,6 +41,10 @@ To upload an object to a bucket, use the `uploadobject` command followed by the 
 - Never store your AWS access keys directly in the source code. Use environment variables or the AWS configuration file instead.
 - Ensure appropriate IAM policies are in place for users and roles interacting with AWS services.
 
-## License
+## Licence
 
-This project is distributed under the MIT license. Refer to the `LICENSE` file for more details. (Include a license file if intended).
+Ce projet est distribué sous la licence MIT. Consultez le fichier `LICENSE` pour plus d'informations. (Veillez à inclure un fichier de licence si cela est votre intention.)
+
+---
+
+Ce README offre les informations essentielles pour débuter l'utilisation du script. N'hésitez pas à l'adapter ou l'étendre en fonction des particularités de votre projet ou de besoins additionnels.
