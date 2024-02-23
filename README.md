@@ -74,7 +74,3 @@ node index.js uploadobject mon-bucket monFichier.jpg dossier_S3/fichier.jpg
 ## Licence
 
 Ce projet est distribué sous la licence MIT. Consultez le fichier `LICENSE` pour plus d'informations. (Veillez à inclure un fichier de licence si cela est votre intention.)
-
----
-
-Ce README offre les informations essentielles pour débuter l'utilisation du script. N'hésitez pas à l'adapter ou l'étendre en fonction des particularités de votre projet ou de besoins additionnels.
