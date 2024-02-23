@@ -1,62 +1,54 @@
-# Projet de Gestion AWS S3 (Web interface)
+# AWS S3 Management Project (Web interface)
 
-Une brève description du projet va ici. Expliquez ce que fait votre application et son but.
+This React application allows users to upload files to AWS S3 and retrieve secure, signed URLs for accessing these files. It leverages AWS SDK for JavaScript to interact with Amazon S3 services, providing a seamless file handling experience within the application.
 
-## Démarrage rapide
+## Getting Started
 
-Pour lancer ce projet localement, suivez ces étapes.
+### Prerequisites
 
-### Prérequis
-
-- Node.js installé sur votre machine.
-- Un compte AWS avec un bucket S3 configuré.
+- Node.js installed on your system
+- An AWS account with access to S3 services
+- An S3 bucket set up for file storage
 
 ### Installation
 
-1. Clonez le dépôt :
-```bash
-git clone url_du_dépôt
-```
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure your AWS credentials by setting the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
 
-2. Installez les dépendances NPM :
-```bash
-npm install
-```
+### Running the Application
 
-3. Configurez vos variables d'environnement dans un fichier `.env` à la racine du projet :
-```plaintext
-REACT_APP_AWS_ACCESS_KEY_ID=VotreCléDAccèsAWS
-REACT_APP_AWS_SECRET_ACCESS_KEY=VotreCléSecrèteAWS
-```
-
-### Exécution
-
-Lancez l'application en mode développement :
+Start the application by running:
 ```bash
 npm start
 ```
+The React app will launch in your default web browser.
 
-Ouvrez [http://localhost:3000](http://localhost:3000) pour la voir dans votre navigateur.
+## Features
 
-## Fonctionnalités
+### File Upload
 
-- Téléchargement de fichiers sur AWS S3 : Les utilisateurs peuvent télécharger des fichiers directement sur un bucket AWS S3 via l'interface utilisateur.
+The `uploadObject.js` script handles the uploading of files to your configured S3 bucket. It uses the AWS SDK to authenticate and perform the upload operation.
 
-## Développement
+### Accessing Files
 
-### Structure du Projet
+The `getUrl.js` script generates signed URLs for securely accessing the uploaded files. These URLs are temporary and expire after a predefined duration, enhancing the security of your file storage.
 
-- `App.js` : Point d'entrée de l'application. Contient la logique de l'interface utilisateur pour le téléchargement de fichiers.
-- `uploadObject.js` : Module pour télécharger des fichiers sur AWS S3. Utilise les SDK AWS pour interagir avec S3.
+## Environment Configuration
 
-### Sécurité
+Ensure you have the following environment variables set:
 
-Assurez-vous de ne pas exposer vos clés d'accès AWS dans le code source. Utilisez des variables d'environnement pour gérer les clés d'accès.
+- `AWS_ACCESS_KEY_ID`: Your AWS access key ID.
+- `AWS_SECRET_ACCESS_KEY`: Your AWS secret access key.
+- `REACT_APP_BUCKET_NAME`: The name of your S3 bucket.
 
-## Contribution
+## Contributing
 
-Les contributions sont les bienvenues. Veuillez ouvrir une issue pour discuter des changements que vous souhaitez apporter ou soumettez directement une pull request.
+Contributions are welcome. Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## Licence
+## License
 
-Spécifiez ici la licence sous laquelle votre projet est distribué.
+This project is distributed under the MIT License. See the LICENSE file for more information. (Be sure to include a license file if this is your intention.)
