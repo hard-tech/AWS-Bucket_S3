@@ -1,80 +1,46 @@
-# Projet de Gestion AWS S3 en Node.js
+# AWS S3 Management Project (Node.js CLI)
 
-Ce script Node.js offre une interface en ligne de commande (CLI) pour interagir avec Amazon S3. Il permet de créer des buckets, d'obtenir des URLs signées pour les objets, et d'uploader des objets dans un bucket spécifique. Le script utilise le SDK AWS pour JavaScript.
+This Node.js script provides a command-line interface (CLI) for interacting with Amazon S3. It supports creating buckets, generating signed URLs for objects, and uploading objects to a specified bucket. The script utilizes the AWS SDK for JavaScript.
 
-## Prérequis
+## Requirements
 
-- Node.js doit être installé sur votre machine.
-- Un compte AWS avec les permissions nécessaires pour créer des buckets, uploader des objets, et générer des URLs signées.
-- Les clés d'accès AWS (Access Key ID et Secret Access Key) doivent être configurées localement dans le fichier `.env`. Les variables doivent être définies comme suit :
-  - `AWS_ACCESS_KEY_ID="VOTRE_ACCESS_KEY"`
-  - `AWS_SECRET_ACCESS_KEY="VOTRE_SECRET_ACCESS_KEY"`
+- Node.js must be installed on your machine.
+- An AWS account with necessary permissions to create buckets, upload objects, and generate signed URLs.
+- AWS access keys (Access Key ID and Secret Access Key) must be locally configured in the `.env` file, with variables set as follows:
+  - `AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY"`
+  - `AWS_SECRET_ACCESS_KEY="YOUR_SECRET_ACCESS_KEY"`
 
 ## Configuration
 
-1. Clonez ou téléchargez ce dépôt sur votre machine.
-2. Dans le dossier du projet, installez les dépendances en exécutant `npm install` ou `yarn install`.
-3. Assurez-vous que vos clés d'accès AWS sont correctement configurées.
+1. Clone or download this repository to your machine.
+2. Install dependencies in the project folder with `npm install` or `yarn install`.
+3. Ensure your AWS access keys are correctly configured.
 
-## Utilisation
+## Usage
 
-Le script prend en charge trois commandes principales :
+The script supports three main commands:
 
-### 1. Créer un Bucket
+### 1. Create a Bucket
 
-Pour créer un bucket, utilisez la commande `createbucket` suivie du nom du bucket à créer.
+To create a bucket, use the `createbucket` command followed by the bucket name.
 
-```bash
-node index.js createbucket <NomDuBucket>
-```
+### 2. Get a Signed URL
 
-### 2. Obtenir une URL Signée
+To obtain a signed URL for a specific object in a bucket, use the `geturl` command followed by the bucket name and object path.
 
-Pour obtenir une URL signée pour un objet spécifique dans un bucket, utilisez la commande `geturl` suivie du nom du bucket et du chemin d'accès de l'objet.
+### 3. Upload an Object
 
-```bash
-node index.js geturl <NomDuBucket> <CheminDaccesDuFichier>
-```
+To upload an object to a bucket, use the `uploadobject` command followed by the bucket name, local file name, and the object path/name in the bucket. The file must be located in the `uploadDocument` folder.
 
-### 3. Uploader un Objet
+## Examples
 
-Pour uploader un objet dans un bucket, utilisez la commande `uploadobject` suivie du nom du bucket, du nom du fichier local, et du chemin/nom de l'objet dans le bucket.
+- Creating a bucket, obtaining a signed URL for an object, and uploading an object to a bucket are illustrated with sample commands.
 
-**Le fichier doit se trouver impérativement dans le dossier `uploadDocument`.**
+## Security
 
-```bash
-node index.js uploadobject <NomDuBucket> <NomDuFichier> <Chemin/NomDansS3>
-```
+- Never store your AWS access keys directly in the source code. Use environment variables or the AWS configuration file instead.
+- Ensure appropriate IAM policies are in place for users and roles interacting with AWS services.
 
-## Exemples
+## License
 
-- Créer un bucket :
-
-```bash
-node index.js createbucket mon-nouveau-bucket
-```
-
-- Obtenir une URL signée pour un objet :
-
-```bash
-node index.js geturl mon-bucket dossier_S3/image.jpg
-```
-
-- Uploader un objet dans un bucket :
-
-```bash
-node index.js uploadobject mon-bucket monFichier.jpg dossier_S3/fichier.jpg
-```
-
-## Sécurité
-
-- Ne stockez jamais vos clés d'accès AWS directement dans le code source. Utilisez plutôt des variables d'environnement ou le fichier de configuration AWS.
-- Assurez-vous de mettre en place des politiques IAM appropriées pour les utilisateurs et les rôles interagissant avec les services AWS.
-
-## Licence
-
-Ce projet est distribué sous la licence MIT. Consultez le fichier `LICENSE` pour plus d'informations. (Veillez à inclure un fichier de licence si cela est votre intention.)
-
----
-
-Ce README offre les informations essentielles pour débuter l'utilisation du script. N'hésitez pas à l'adapter ou l'étendre en fonction des particularités de votre projet ou de besoins additionnels.
+This project is distributed under the MIT license. Refer to the `LICENSE` file for more details. (Include a license file if intended).
