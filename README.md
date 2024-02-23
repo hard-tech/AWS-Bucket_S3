@@ -43,8 +43,4 @@ To upload an object to a bucket, use the `uploadobject` command followed by the 
 
 ## Licence
 
-Ce projet est distribué sous la licence MIT. Consultez le fichier `LICENSE` pour plus d'informations. (Veillez à inclure un fichier de licence si cela est votre intention.)
-
----
-
-Ce README offre les informations essentielles pour débuter l'utilisation du script. N'hésitez pas à l'adapter ou l'étendre en fonction des particularités de votre projet ou de besoins additionnels.
+This project is distributed under the MIT License. See the `LICENSE` file for more information. (Be sure to include a license file if this is your intention.)
