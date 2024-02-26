@@ -10,7 +10,7 @@ function App() {
   const [uploadMessage, setUploadMessage] = useState("");
 
   const bucketName = process.env.REACT_APP_AWS_BUCKET_NAME;
-  const fileS3Path = "5610944.png";
+  const fileS3Path = "wqqlrp.png";
 
   const handleChange = (newFile) => {
     setFile(newFile);
